@@ -19,6 +19,7 @@ connectDb();
 
 //api endpoints
 app.use("/api/food",foodRouters);
+app.use("/images",express.static('uploads'))
 
 app.get("/",(req,res)=>{
     res.send("API working");
