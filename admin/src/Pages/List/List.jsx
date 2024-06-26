@@ -8,14 +8,17 @@ const List = () => {
   const url = "http://localhost:4000";
   const [list,setList] = useState([]);
   const fetchList = async ()=>{
-    const response = await axios.get(`${url}/api/food/list`);
-    console.log(response);
-    if(response.data.success) {
+  const response = await axios.get(`${url}/api/food/list`);
+  if(response.data.success) {
       setList(response.data.data);
     }
     else{
       toast.error("Error");
     }
+  }
+
+  const removeFood = async(foodId)=>{
+      console.log(foodId);
   }
 
   useEffect(()=>{
